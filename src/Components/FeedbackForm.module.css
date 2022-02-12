@@ -1,0 +1,19 @@
+p {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.buttonList {
+  width: 50px;
+  display: flex;
+}
+
+.button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.statItem {
+  display: flex;
+  margin-bottom: 10px;
+}
