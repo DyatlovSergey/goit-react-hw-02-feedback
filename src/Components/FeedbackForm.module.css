@@ -3,10 +3,6 @@ p {
   font-weight: 700;
 }
 
-.container {
-  padding: 15px;
-}
-
 .buttonList {
   width: 50px;
   display: flex;
@@ -20,8 +16,4 @@ p {
 .statItem {
   display: flex;
   margin-bottom: 10px;
-}
-
-.notification {
-  font-size: 15px;
 }
