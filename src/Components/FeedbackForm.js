@@ -68,13 +68,6 @@ class FeedbackForm extends React.Component {
             />
           </Section>
         )}
-
-        {/* <div>
-          <p>Statistics </p>
-          <span className={s.statItem}>Good: {this.state.good}</span>
-          <span className={s.statItem}>Neutral:{this.state.neutral}</span>
-          <span className={s.statItem}>Bad:{this.state.bad}</span>
-        </div> */}
       </div>
     );
   }
