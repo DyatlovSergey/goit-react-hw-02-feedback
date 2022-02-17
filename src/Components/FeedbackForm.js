@@ -11,22 +11,26 @@ class FeedbackForm extends React.Component {
     bad: 0,
   };
 
-  handleGood = () => {
-    this.setState((prevState) => ({
-      good: prevState.good + 1,
-    }));
-  };
+  // handleGood = () => {
+  //   this.setState((prevState) => ({
+  //     good: prevState.good + 1,
+  //   }));
+  // };
 
-  handleNeutral = () => {
-    this.setState((prevState) => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
+  // handleNeutral = () => {
+  //   this.setState((prevState) => ({
+  //     neutral: prevState.neutral + 1,
+  //   }));
+  // };
 
-  handleBad = () => {
-    this.setState((prevState) => ({
-      bad: prevState.bad + 1,
-    }));
+  // handleBad = () => {
+  //   this.setState((prevState) => ({
+  //     bad: prevState.bad + 1,
+  //   }));
+  // };
+
+  handleClick = (button) => {
+    this.setState({ [button]: this.state[button] + 1 });
   };
 
   totalFeedback = () => {
@@ -43,39 +47,22 @@ class FeedbackForm extends React.Component {
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
     return (
       <div className={s.container}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onClickGood={this.handleGood}
-            onClickNeutral={this.handleNeutral}
-            onClickBad={this.handleBad}
+            options={["good", "neutral", "bad"]}
+            onHandleClick={this.handleClick}
           />
         </Section>
-        {/* <div className={s.buttonList}>
-          <button type="button" className={s.button} onClick={this.handleGood}>
-            good
-          </button>
-          <button
-            type="button"
-            className={s.button}
-            onClick={this.handleNeutral}
-          >
-            neutral
-          </button>
-          <button type="button" className={s.button} onClick={this.handleBad}>
-            bad
-          </button>
-        </div> */}
 
         {this.totalFeedback() === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
           <Section title="Statistics">
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
+              options={{ good, neutral, bad }}
               totalFeedback={this.totalFeedback()}
               positiveFeedback={this.positiveFeedback()}
             />
